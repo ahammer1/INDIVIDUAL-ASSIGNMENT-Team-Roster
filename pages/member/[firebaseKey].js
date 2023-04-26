@@ -15,6 +15,7 @@ export default function ViewMember() {
   return (
     <div className="mt-5 d-flex flex-wrap">
       <div className="text-white ms-5 details">
+        <img src={memberDetails.image} alt={memberDetails.title} style={{ width: '300px' }} />
         <h5>
           {memberDetails.first_name}
         </h5>

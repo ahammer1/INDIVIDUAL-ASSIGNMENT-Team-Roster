@@ -78,7 +78,21 @@ function MemberForm({ obj }) {
         />
       </Form.Group>
 
+      {/* IMAGE INPUT  */}
+      <Form.Label>Character Image</Form.Label>
+      <FloatingLabel controlId="floatingInput2" label="Character Image" className="mb-3">
+        <Form.Control
+          type="url"
+          placeholder="Enter an image url"
+          name="image"
+          value={formInput.image}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
       {/* DESCRIPTION TEXTAREA  */}
+      <Form.Label>Character Description</Form.Label>
       <FloatingLabel controlId="floatingTextarea" label="Description" className="mb-3">
         <Form.Control
           as="textarea"
