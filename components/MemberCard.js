@@ -12,19 +12,37 @@ function MemberCard({ memberObj, onUpdate }) {
     }
   };
 
+  const styles = {
+    card: {
+      backgroundColor: '#ccc',
+      borderRadius: 10,
+      padding: '1rem',
+      width: '18rem',
+    },
+    cardImage: {
+      // objectFit: 'scale-down',
+      width: '150px',
+      height: '180px',
+      borderRadius: 20,
+    },
+  };
+
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card style={styles.card}>
+      <Card.Img className="mx-auto" variant="top" src={memberObj.image} style={styles.cardImage} />
       <Card.Body>
-        <Card.Title>{memberObj.first_name} {memberObj.last_name}</Card.Title>
+        <Card.Title>{memberObj.first_name} </Card.Title>
+        <Card.Text>{memberObj.last_name}</Card.Text>
+        {/* <Card.Text>{memberObj.description}</Card.Text> */}
         {/* DYNAMIC LINK TO VIEW THE Member DETAILS  */}
         <Link href={`/member/${memberObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
+          <Button variant="dark" size="sm" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE Member DETAILS  */}
         <Link href={`/member/edit/${memberObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button variant="dark" size="sm">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisMember} className="m-2">
+        <Button variant="dark" size="sm" onClick={deleteThisMember} className="m-2">
           DELETE
         </Button>
       </Card.Body>
@@ -34,8 +52,10 @@ function MemberCard({ memberObj, onUpdate }) {
 
 MemberCard.propTypes = {
   memberObj: PropTypes.shape({
+    image: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
+    // description: PropTypes.string,
     favorite: PropTypes.bool,
     firebaseKey: PropTypes.string,
   }).isRequired,
