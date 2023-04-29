@@ -1,23 +1,35 @@
-import PropTypes from 'prop-types';
+// const SearchBar = ({ searchQuery, setSearchQuery }) => (
+//   <form action="/" method="get">
+//     <label htmlFor="header-search">
+//       <span className="visually-hidden">Search Members</span>
+//     </label>
+//     <input
+//       value={searchQuery}
+//       onInput={(e) => setSearchQuery(e.target.value)}
+//       type="text"
+//       id="header-search"
+//       placeholder="Search Members"
+//       name="s"
+//     />
+//     <button type="submit">Search</button>
+//   </form>
+// );
 
-export default function Search({ searchInput, setSearchInput }) {
-  const handleChange = (e) => {
-    setSearchInput(e.target.value.toLowerCase());
-  };
+// const Members = [
+//   {},
+// ];
 
-  return (
-    <>
-      <input type="text" placeholder="Search" onChange={handleChange} value={searchInput} />
-    </>
-  );
-}
+// const { search } = window.location;
+// const query = new URLSearchParams(search).get('s');
+// const filterMembers = (Member, query) => {
+//   if (!query) {
+//     return Member;
+//   }
 
-Search.propTypes = {
-  searchInput: PropTypes.string,
-  setSearchInput: PropTypes.string,
-};
+//   return Members.filter((member) => {
+//     const memberName = member.name.toLowerCase();
+//     return memberName.includes(query);
+//   });
+// };
 
-Search.defaultProps = {
-  searchInput: '',
-  setSearchInput: '',
-};
+// export default SearchBar;
